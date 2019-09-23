@@ -34,11 +34,16 @@ public class ApplicationSessionFactory {
     
 	@Bean
 	public DataSource getDataSource() {
+		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+		String username = dbUri.getUserInfo().split(":")[0];
+		String password = dbUri.getUserInfo().split(":")[1];
+		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath()
+						+ "?sslmode=require";
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("org.postgresql.Driver");
-	    dataSource.setUrl("jdbc:postgresql://localhost:5432/mushrooms");
-	    dataSource.setUsername("hex");
-	    dataSource.setPassword("hex");	 
+	    dataSource.setUrl(dbUrl);
+	    dataSource.setUsername(username);
+	    dataSource.setPassword(password);	 
 	    return dataSource;
 	}
     
