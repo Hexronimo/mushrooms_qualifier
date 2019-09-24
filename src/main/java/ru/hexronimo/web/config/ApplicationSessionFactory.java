@@ -51,7 +51,7 @@ public class ApplicationSessionFactory {
 			System.out.println("ERROR: " + e.getMessage());
 			e.printStackTrace();
 		}
-	    
+	    	return null;
 	}
     
     	private static Properties hibernateProperties() {    	
