@@ -65,7 +65,7 @@ public class ApplicationController {
 		File dir = new File(request.getSession().getServletContext().getRealPath("/")  + ICONPATH + "/");
 		File[] listOfFiles = dir.listFiles();
 		List<String> listOfUsedNames = mushroomPartService.listIconFiles();
-		if (listOfUsedNames != null) {
+		if (listOfFiles != null && listOfUsedNames != null && listOfFiles.length != 0 && listOfUsedNames.size() != 0) {
 			for(File f: listOfFiles) {
 				if(listOfUsedNames == null || !listOfUsedNames.contains(f.getName())) {
 					System.out.println("Изображение " + f.getName() + " не используется и поэтому удалено.");
