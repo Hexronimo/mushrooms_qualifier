@@ -65,11 +65,13 @@ public class ApplicationController {
 		File dir = new File(request.getSession().getServletContext().getRealPath("/")  + ICONPATH + "/");
 		File[] listOfFiles = dir.listFiles();
 		List<String> listOfUsedNames = mushroomPartService.listIconFiles();
-		for(File f: listOfFiles) {
-			if(listOfUsedNames == null || !listOfUsedNames.contains(f.getName())) {
-				System.out.println("Изображение " + f.getName() + " не используется и поэтому удалено.");
-				f.delete();
-			}		
+		if (listOfUsedNames != null) {
+			for(File f: listOfFiles) {
+				if(listOfUsedNames == null || !listOfUsedNames.contains(f.getName())) {
+					System.out.println("Изображение " + f.getName() + " не используется и поэтому удалено.");
+					f.delete();
+				}		
+			}
 		}
 		
 		model.addAttribute("sid", request.getSession().getId());
