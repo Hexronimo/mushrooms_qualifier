@@ -49,4 +49,6 @@ public interface MushroomPartService {
 	public Color getColor(int id);
 	
 	public String getMainPhoto(int mushroomId);
+	
+	public void saveIcon(DataObject obj);
 }
