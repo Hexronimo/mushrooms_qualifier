@@ -17,6 +17,9 @@ public class Cap extends MPart {
 	private String name;
 	@Column(name = "icon")
 	private String icon;
+	//delete this for saving files in filesystem, it was added just to save it in DB for deploy on Heroku
+	@Column(name = "icon_heroku")
+	private byte[] file;
 	
 	public String getName() {
 		return name;
@@ -29,6 +32,12 @@ public class Cap extends MPart {
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	public byte[] getFile() {
+		return file;
+	}
+	public void setFile(byte[] file) {
+		this.file = file;
 	}
 	public int getId() {
 		return id;
