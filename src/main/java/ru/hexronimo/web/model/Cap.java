@@ -6,8 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.apache.commons.codec.binary.Base64;
-
 @Entity
 @Table(name = "caps")
 public class Cap extends MPart {
