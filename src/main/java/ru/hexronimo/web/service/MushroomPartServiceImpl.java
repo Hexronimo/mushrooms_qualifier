@@ -183,8 +183,8 @@ public class MushroomPartServiceImpl implements MushroomPartService {
 	
 	@Transactional
 	@Override
-	public void saveIcon(DataObject obj) {
-		return mushroomPartDAO.saveIcon(obj);
+	public void saveIcon(IconForHeroku icon) {
+		return mushroomPartDAO.saveIcon(icon);
 	}
 
 }
