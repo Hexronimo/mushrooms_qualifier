@@ -75,7 +75,7 @@ public class ApplicationController {
 		}
 		
 		model.addAttribute("sid", request.getSession().getId());
-		
+			
 		List<Cap> listC = mushroomPartService.listCaps();
 		model.addAttribute("caps", listC);
 		
@@ -353,15 +353,13 @@ public class ApplicationController {
 			это неработает из-за редеплоя, придется сохранять в БД
 			
 			file.transferTo(new File(request.getSession().getServletContext().getRealPath("/")  + ICONPATH + "/" + filename));		
-			mushroomPartService.createMPart(part);
+			
 			*/
 			
 			byte[] data = new byte[(int)file.getSize()];
 			data = file.getBytes();
-			IconForHeroku icon = new IconForHeroku();
-			icon.setName(filename);
-			icon.setFile(data);
-			mushroomPartService.saveIcon(icon);
+			part.setFile(data);
+			mushroomPartService.createMPart(part);
 
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
