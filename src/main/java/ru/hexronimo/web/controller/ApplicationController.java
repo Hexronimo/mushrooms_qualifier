@@ -349,12 +349,24 @@ public class ApplicationController {
 		part.setName(mPartName);
 
 		try {
+			/* Убираем эту часть сохранения файла в файловой системе, потому что на Heroku 
+			это неработает из-за редеплоя, придется сохранять в БД
+			
 			file.transferTo(new File(request.getSession().getServletContext().getRealPath("/")  + ICONPATH + "/" + filename));		
 			mushroomPartService.createMPart(part);
+			*/
+			
+			byte[] data = new byte[(int)file.getSize()];
+			data = file.getBytes();
+			DataObject obj = new DataObject();
+			obj.setFile(data);
+			mushroomPartService.saveIcon(obj);
 
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
