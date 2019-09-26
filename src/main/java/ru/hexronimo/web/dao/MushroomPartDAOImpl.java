@@ -179,6 +179,10 @@ public class MushroomPartDAOImpl implements MushroomPartDAO {
 		return url;
 	}
 	
+	@Override
+	public void saveIcon(Icon icon) {
+		sessionFactory.getCurrentSession().save(icon);	
+	}
 
 
 }
