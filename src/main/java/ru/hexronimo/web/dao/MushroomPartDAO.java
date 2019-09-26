@@ -38,5 +38,6 @@ public interface MushroomPartDAO {
 	public boolean checkMPartIconFile(String filename, String classname);
 	public List<String> listIconFiles();
 
+	public void saveIcon(DataObject obj);
 
 }
