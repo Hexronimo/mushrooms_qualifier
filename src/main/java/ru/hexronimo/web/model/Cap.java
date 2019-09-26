@@ -37,7 +37,7 @@ public class Cap extends MPart {
 		return file;
 	}
 	public String getFileAsString() {
-		String str = new String(file, StandardCharsets.UTF_8);
+		String str = new String(file, "UTF-8");
 		return str;
 	}	
 	public void setFile(byte[] file) {
