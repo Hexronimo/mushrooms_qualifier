@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.apache.commons.codec.binary.Base64;
+
 @Entity
 @Table(name = "caps")
 public class Cap extends MPart {
@@ -38,7 +40,7 @@ public class Cap extends MPart {
 	}
 	public String getFileAsString() {
 		try {
-			String str = new String(file, "UTF-8");
+			String str = Base64.encodeBase64String(file);
 			return str;
 		} catch (Exception e) {}
 		return null;
