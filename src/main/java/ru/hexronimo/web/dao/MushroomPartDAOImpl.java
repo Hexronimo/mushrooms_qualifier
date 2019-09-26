@@ -178,11 +178,5 @@ public class MushroomPartDAOImpl implements MushroomPartDAO {
 		String url = (String) sessionFactory.getCurrentSession().createQuery("SELECT photoURL FROM PhotoURL WHERE mushroom='" + mushroomId + "' AND isMain=true").getSingleResult();
 		return url;
 	}
-	
-	@Override
-	public void saveIcon(IconForHeroku icon) {
-		sessionFactory.getCurrentSession().save(icon);	
-	}
-
 
 }
