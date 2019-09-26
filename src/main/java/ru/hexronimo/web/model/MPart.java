@@ -4,6 +4,7 @@ public class MPart {
 	private int id;
 	private String name;
 	private String icon;
+	private byte[] file;
 	
 	public int getId() {
 		return id;
@@ -22,6 +23,12 @@ public class MPart {
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	public byte[] getFile() {
+		return file;
+	}
+	public void setFile(byte[] file) {
+		this.file = file;
 	}
 	
 	
