@@ -50,5 +50,5 @@ public interface MushroomPartService {
 	
 	public String getMainPhoto(int mushroomId);
 	
-	public void saveIcon(DataObject obj);
+	public void saveIcon(IconForHeroku icon);
 }
