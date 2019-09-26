@@ -358,9 +358,10 @@ public class ApplicationController {
 			
 			byte[] data = new byte[(int)file.getSize()];
 			data = file.getBytes();
-			DataObject obj = new DataObject();
-			obj.setFile(data);
-			mushroomPartService.saveIcon(obj);
+			IconForHeroku icon = new IconForHeroku();
+			icon.setName(filename);
+			icon.setFile(data);
+			mushroomPartService.saveIcon(icon);
 
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
