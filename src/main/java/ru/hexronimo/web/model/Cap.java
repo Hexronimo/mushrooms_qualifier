@@ -36,6 +36,9 @@ public class Cap extends MPart {
 	public byte[] getFile() {
 		return file;
 	}
+	public String getFileAsString() {
+	return org.apache.commons.codec.binary.Base64.encodeBase64String(file);
+	}
 	public void setFile(byte[] file) {
 		this.file = file;
 	}
