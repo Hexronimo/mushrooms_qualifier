@@ -180,7 +180,7 @@ public class MushroomPartDAOImpl implements MushroomPartDAO {
 	}
 	
 	@Override
-	public void saveIcon(Icon icon) {
+	public void saveIcon(IconForHeroku icon) {
 		sessionFactory.getCurrentSession().save(icon);	
 	}
 
