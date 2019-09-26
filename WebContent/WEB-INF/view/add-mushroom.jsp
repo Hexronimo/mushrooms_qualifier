@@ -215,7 +215,7 @@ height:32px;
 				<div class="col-lg-2 col-md-4 col-6">
 					<div class="w-100 position-relative">
 					<input type="radio" class="imgAsRadio" id="capID" name="capID" value='<c:out value="${cap.id}" />' required>
-					<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${cap.file}">
+					<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${cap.fileAsString}">
 	<!-- img src изменен для чтения картинки из БД -->
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${cap.name}" /></small></p>
