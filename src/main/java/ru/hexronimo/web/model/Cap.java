@@ -37,8 +37,11 @@ public class Cap extends MPart {
 		return file;
 	}
 	public String getFileAsString() {
-		String str = new String(file, "UTF-8");
-		return str;
+		try {
+			String str = new String(file, "UTF-8");
+			return str;
+		} catch (Exception e) {}
+		return null;
 	}	
 	public void setFile(byte[] file) {
 		this.file = file;
