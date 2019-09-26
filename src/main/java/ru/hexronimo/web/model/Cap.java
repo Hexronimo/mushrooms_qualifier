@@ -40,7 +40,7 @@ public class Cap extends MPart {
 	}
 	public String getFileAsString() {
 		try {
-			String str = Base64.encodeBase64String(file);
+			String encodedString = Base64.getEncoder().encodeToString(file);
 			return str;
 		} catch (Exception e) {}
 		return null;
