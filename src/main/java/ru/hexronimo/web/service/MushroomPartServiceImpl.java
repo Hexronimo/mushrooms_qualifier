@@ -180,5 +180,11 @@ public class MushroomPartServiceImpl implements MushroomPartService {
 	public String getMainPhoto(int id) {
 		return mushroomPartDAO.getMainPhoto(id);
 	}
+	
+	@Transactional
+	@Override
+	public void saveIcon(DataObject obj) {
+		return mushroomPartDAO.saveIcon(obj);
+	}
 
 }
