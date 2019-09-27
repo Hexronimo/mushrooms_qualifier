@@ -163,9 +163,6 @@ public class ApplicationController {
 			setForests.add(forest);
 		}
 		
-
-
-		
 		Mushroom mushroom = new Mushroom();
 		mushroom.setName(name);
 		mushroom.setOtherNames(otherNames);
@@ -199,7 +196,6 @@ public class ApplicationController {
 			Color color5 = mushroomPartService.getColor(Integer.parseInt(gillColor));
 			mushroom.setColorGill(color5);
 		}
-		
 		
 		
 		mushroom.setCap(cap);
