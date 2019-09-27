@@ -233,23 +233,25 @@ height:32px;
     	</div>
 		</div>
 		
-		<div class="row colorsrow">
-		<c:forEach items="${colors}" var="clr">
-		<div class="col-lg-3">
-		<div class="media mb-3">
-		<div class="position-relative">
-		<input type="checkbox" class="imgAsRadio" id="capColorID" name="capColorID" value='<c:out value="${clr.id}" />'>
-		<div class="mr-3 color" style="background-image: linear-gradient(#<c:out value='${clr.hex1}' />, #<c:out value='${clr.hex2}' />);">
+		<div class="colorsrow">
+		<div class="row">
+			<c:forEach items="${colors}" var="clr">
+				<div class="col-lg-3">
+					<div class="media mb-3">
+						<div class="position-relative">
+						<input type="checkbox" class="imgAsRadio" id="capColorID" name="capColorID" value='<c:out value="${clr.id}" />'>
+						<div class="mr-3 color" style="background-image: linear-gradient(#<c:out value='${clr.hex1}' />, #<c:out value='${clr.hex2}' />);"></div>
+						</div>
+						<div class="media-body align-self-center">
+							<p class="text-uppercase" style="line-height:1;">
+								<small class="font-weight-bold"><c:out value="${clr.name}" /></small>
+							</p>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
 		</div>
 		</div>
-		<div class="media-body align-self-center">
-    	<p class="text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${clr.name}" /></small></p>
-    	</div>
-		</div>
-		</div>
-		</c:forEach>
-		</div>
-		
 	</div>
 </div>
 <!-- Конец секции (Шляпка) -->
@@ -754,10 +756,9 @@ height:32px;
 		        processData: false,
 		        contentType: false,
 		        success  : function() {
-
-			        $('.colorsrow').load(' .colorsrow', function() {});
-				    $('#modalcp').modal('toggle');
-		            $('#submitColor').trigger("reset");
+			    	$('.colorsrow').load(' .row', function() {});
+				$('#modalcp').modal('toggle');
+		            	$('#submitColor').trigger('reset');
 		        }
 		    });
 	});
