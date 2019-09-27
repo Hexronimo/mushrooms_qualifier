@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.Base64;
 
 @Entity
 @Table(name = "forest")
@@ -23,6 +24,22 @@ public class Forest extends MPart {
 	private String icon;
 	@ManyToMany(mappedBy = "forests")
 	private Set<Mushroom> mashrooms;
+	@Column(name = "icon_heroku")
+	private byte[] file;
+	
+	public byte[] getFile() {
+		return file;
+	}
+	public String getFileAsString() {
+		try {
+			String str = Base64.getEncoder().encodeToString(file);
+			return str;
+		} catch (Exception e) {}
+		return null;
+	}	
+	public void setFile(byte[] file) {
+		this.file = file;
+	}
 	public int getId() {
 		return id;
 	}
