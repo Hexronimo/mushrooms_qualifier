@@ -756,7 +756,7 @@ height:32px;
 		        processData: false,
 		        contentType: false,
 		        success  : function() {
-				$('.colorsrow').html();
+				$('.colorsrow').load(' ', function() {});
 			    	$('#modalcp').modal('toggle');
 		            	$('#submitColor').trigger('reset');
 		        }
