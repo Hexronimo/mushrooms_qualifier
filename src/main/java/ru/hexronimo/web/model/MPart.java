@@ -6,6 +6,19 @@ public class MPart {
 	private String icon;
 	private byte[] file;
 	
+	public byte[] getFile() {
+		return file;
+	}
+	public String getFileAsString() {
+		try {
+			String str = Base64.getEncoder().encodeToString(file);
+			return str;
+		} catch (Exception e) {}
+		return null;
+	}	
+	public void setFile(byte[] file) {
+		this.file = file;
+	}
 	public int getId() {
 		return id;
 	}
@@ -23,13 +36,5 @@ public class MPart {
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
-	}
-	public byte[] getFile() {
-		return file;
-	}
-	public void setFile(byte[] file) {
-		this.file = file;
-	}
-	
-	
+	}	
 }
