@@ -1,5 +1,7 @@
 package ru.hexronimo.web.model;
 
+import java.util.Base64;
+
 public class MPart {
 	private int id;
 	private String name;
