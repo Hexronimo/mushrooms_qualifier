@@ -22,18 +22,6 @@ public class Cap extends MPart {
 	@Column(name = "icon_heroku")
 	private byte[] file;
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getIcon() {
-		return icon;
-	}
-	public void setIcon(String icon) {
-		this.icon = icon;
-	}
 	public byte[] getFile() {
 		return file;
 	}
@@ -46,6 +34,18 @@ public class Cap extends MPart {
 	}	
 	public void setFile(byte[] file) {
 		this.file = file;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	public int getId() {
 		return id;
