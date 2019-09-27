@@ -18,7 +18,22 @@ public class Stipe extends MPart {
 	private String name;
 	@Column(name = "icon")
 	private String icon;
+	@Column(name = "icon_heroku")
+	private byte[] file;
 	
+	public byte[] getFile() {
+		return file;
+	}
+	public String getFileAsString() {
+		try {
+			String str = Base64.getEncoder().encodeToString(file);
+			return str;
+		} catch (Exception e) {}
+		return null;
+	}	
+	public void setFile(byte[] file) {
+		this.file = file;
+	}
 	public int getId() {
 		return id;
 	}
