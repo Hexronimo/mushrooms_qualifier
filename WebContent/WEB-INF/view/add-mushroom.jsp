@@ -278,7 +278,7 @@ height:32px;
 				<div class="col-lg-2 col-md-4 col-6">
 					<div class="w-100 position-relative">
 					<input type="radio" class="imgAsRadio" id="gillID" name="gillID" value='<c:out value="${gill.id}" />' required>
-					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${cap.fileAsString}'>
+					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${gill.fileAsString}'>
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${gill.name}" /></small></p>
 				</div>
@@ -337,7 +337,7 @@ height:32px;
 				<div class="col-lg-2 col-md-4 col-6">
 					<div class="w-100 position-relative">
 					<input type="radio" class="imgAsRadio" id="scaleID" name="scaleID" value='<c:out value="${scale.id}" />' required>
-					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${cap.fileAsString}'>
+					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${scale.fileAsString}'>
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${scale.name}" /></small></p>
 				</div>
@@ -371,7 +371,7 @@ height:32px;
 				<div class="col-lg-2 col-md-4 col-6">
 					<div class="w-100 position-relative">
 					<input type="radio" class="imgAsRadio" id="stipeID" name="stipeID" value='<c:out value="${stipe.id}" />' required>
-					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${cap.fileAsString}'>
+					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${stipe.fileAsString}'>
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${stipe.name}" /></small></p>
 				</div>
@@ -430,7 +430,7 @@ height:32px;
 				<div class="col-lg-2 col-md-4 col-6">
 					<div class="w-100 position-relative">
 					<input type="radio" class="imgAsRadio" id="skirtID" name="skirtID" value='<c:out value="${skirt.id}" />' required>
-					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${cap.fileAsString}'>
+					<img class="img-fluid icon mb-1" src='data:image/svg+xml;base64,${skirt.fileAsString}'>
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${skirt.name}" /></small></p>
 				</div>
@@ -492,7 +492,7 @@ height:32px;
 				<div class="col-lg-4 col-md-5 col-12">
 					<div class="w-100 position-relative">
 					<input type="checkbox" class="imgAsRadio" id="forestID" name="forestID" value='<c:out value="${forest.id}" />' required>
-					<img class="img-fluid icon mb-1" src='data:image/jpeg;base64,${cap.fileAsString}'>
+					<img class="img-fluid icon mb-1" src='data:image/jpeg;base64,${forest.fileAsString}'>
 					</div>
 					<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${forest.name}" /></small></p>
 				</div>
