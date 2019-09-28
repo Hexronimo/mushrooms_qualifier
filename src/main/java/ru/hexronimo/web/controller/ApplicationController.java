@@ -286,7 +286,7 @@ public class ApplicationController {
 			} catch (Exception e) {}
 			
 			i++;
-			photos.put(i, srt);
+			photos.put(i, str);
 			
 			/*
 			if(file.getOriginalFilename().endsWith(".jpg")) {
