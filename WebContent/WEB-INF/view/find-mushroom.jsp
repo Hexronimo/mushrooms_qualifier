@@ -173,7 +173,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="stipeID" name="stipeID" value='<c:out value="${stipe.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${stipe.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${stipe.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${stipe.name}" /></small></p>
 		</div>
@@ -273,7 +273,7 @@ border-radius: 32px;
       <c:forEach items="${photos}" var="p">
       <div class="col-4">
       <a href="<c:url value="/img/mushrooms/" /><c:out value="${p}" />" target="_blank">
-      <div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:url value="/img/mushrooms/" /><c:out value="${p}" />')no-repeat top center; background-size: cover;"></div>
+      <div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:out value="${p}" />')no-repeat top center; background-size: cover;"></div>
       </a>
       </div>
       </c:forEach>
@@ -296,7 +296,7 @@ border-radius: 32px;
       <div class="row">
       <c:forEach items="${forests}" var="f">
       <div class="col-4 mb-2">
-      <img class="img-fluid" src='<c:url value="/img/icons/" /><c:out value="${f.icon}" />'>
+      <img class="img-fluid" src='data:image/svg+xml;base64,${f.fileAsString}'>
       <c:out value="${f.name}" />
       </div>
       </c:forEach>
