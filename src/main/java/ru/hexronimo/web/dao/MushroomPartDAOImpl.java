@@ -174,8 +174,8 @@ public class MushroomPartDAOImpl implements MushroomPartDAO {
 	}
 
 	@Override
-	public String getMainPhoto(int mushroomId) {
-		String url = (String) sessionFactory.getCurrentSession().createQuery("SELECT photoURL FROM PhotoURL WHERE mushroom='" + mushroomId + "' AND isMain=true").getSingleResult();
+	public byte[] getMainPhoto(int mushroomId) {
+		byte[] url = (byte[]) sessionFactory.getCurrentSession().createQuery("SELECT file FROM PhotoURL WHERE mushroom='" + mushroomId + "' AND isMain=true").getSingleResult();
 		return url;
 	}
 
