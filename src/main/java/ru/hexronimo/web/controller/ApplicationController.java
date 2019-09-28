@@ -228,6 +228,7 @@ public class ApplicationController {
 		for (Map.Entry<Integer,String> t : thumbs.entrySet()) {
 			
 			PhotoURL purl = new PhotoURL();
+			purl.setMushroom(mushroom);
 			purl.setFile(Base64.getDecoder().decode(t.getValue()));
 			if(mainPhoto == t.getKey()) {
 				purl.setMain(true);	
