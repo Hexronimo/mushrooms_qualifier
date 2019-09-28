@@ -177,7 +177,7 @@ public class MushroomPartServiceImpl implements MushroomPartService {
 	
 	@Transactional
 	@Override
-	public String getMainPhoto(int id) {
+	public byte[] getMainPhoto(int id) {
 		return mushroomPartDAO.getMainPhoto(id);
 	}
 	
