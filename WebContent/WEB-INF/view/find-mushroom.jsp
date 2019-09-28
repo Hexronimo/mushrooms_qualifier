@@ -267,13 +267,13 @@ border-radius: 32px;
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div id="modalbody" class="modal-body">
-      <img class="img-fluid" src="<c:url value="/img/mushrooms/" /><c:out value="${mainPhoto}" />"><br><br>
+      <img class="img-fluid" src="data:image/jpeg;base64,<c:out value="${mainPhoto}" />"><br><br>
       <c:if test="${not empty mushroom}">
       <div class="row">
       <c:forEach items="${photos}" var="p">
       <div class="col-4">
       <a href="<c:url value="/img/mushrooms/" /><c:out value="${p}" />" target="_blank">
-      <div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:out value="${p}" />')no-repeat top center; background-size: cover;"></div>
+      <div class="sqr-image img-fluid  m-auto mb-1" style="background:url('data:image/jpeg;base64,<c:out value="${p}" />')no-repeat top center; background-size: cover;"></div>
       </a>
       </div>
       </c:forEach>
@@ -296,7 +296,7 @@ border-radius: 32px;
       <div class="row">
       <c:forEach items="${forests}" var="f">
       <div class="col-4 mb-2">
-      <img class="img-fluid" src='data:image/svg+xml;base64,${f.fileAsString}'>
+      <img class="img-fluid" src='data:image/jpeg;base64,${f.fileAsString}'>
       <c:out value="${f.name}" />
       </div>
       </c:forEach>
