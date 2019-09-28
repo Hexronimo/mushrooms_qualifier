@@ -555,7 +555,7 @@ public class ApplicationController {
 		ArrayList<String> urls = new ArrayList<>();
 		for(PhotoURL u: photos) {
 			if(!u.isMain()) {
-			urls.add(Base64.getEncoder().encodeToString(u.getfile()));
+			urls.add(Base64.getEncoder().encodeToString(u.getFile()));
 			} else {
 				request.getSession().setAttribute("mainPhoto", Base64.getEncoder().encodeToString(u.getFile()));
 			}
