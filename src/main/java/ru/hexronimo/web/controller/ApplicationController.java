@@ -39,6 +39,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Base64;
+
 import ru.hexronimo.web.model.*;
 import ru.hexronimo.web.service.MushroomPartService;
 import ru.hexronimo.web.service.MushroomService;
@@ -259,7 +261,7 @@ public class ApplicationController {
 	@RequestMapping(value = "/submitPhotos", method = {RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public void submitPhotos(@RequestParam("photos") MultipartFile[] files, HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-
+		/* это было для загрузки на диск, сейчас код переделан под загрузку в БД из-за Heroku
 		String dir = request.getSession().getServletContext().getRealPath("/")  + "resources/img/tmp/" + request.getSession().getId() + "/";
 		String dirthumb = request.getSession().getServletContext().getRealPath("/")  + "resources/img/tmp/thumbs/" + request.getSession().getId() + "/";
 		File path = new File(dir);
@@ -272,8 +274,21 @@ public class ApplicationController {
 		
 		List<String> thumbs = new ArrayList<>();
 		int i = 0;
+		*/
+		Map<Integer, String> photos = new HashMap<>();
+		
 		for(MultipartFile file: files) {
+			byte[] data = new byte[(int)file.getSize()];
+			data = file.getBytes();
+			String str = "";
+			try {
+			str = Base64.getEncoder().encodeToString(data);
+			} catch (Exception e) {}
+			
 			i++;
+			photos.put(i, srt);
+			
+			/*
 			if(file.getOriginalFilename().endsWith(".jpg")) {
 			String newFileName;
 			do {	
@@ -293,6 +308,7 @@ public class ApplicationController {
 			ImageIO.write(img, "jpg", new File(dirthumb + "tmp" + i + "_" + newFileName));
 			thumbs.add(request.getSession().getId() + "/tmp" + i + "_" + newFileName);
 			}
+			*/
 		}
 		request.getSession().setAttribute("thumbs", thumbs);		
 	}
