@@ -212,17 +212,31 @@ public class ApplicationController {
 		mushroomService.saveMushroom(mushroom);
 		mushroom.setForests(setForests);
 		
-		String mainPhotoName = request.getParameter("mainPhoto");
+		int mainPhoto = Integer.parseInt(request.getParameter("mainPhoto"));
 		String sid = request.getParameter("sid");
 		// перемещаем фотографии грибов из временной папки на постоянное хранение
+		/*
 		File dir = new File(request.getSession().getServletContext().getRealPath("/")  + "resources/img/tmp/" + sid);
 		File[] listOfFiles = dir.listFiles();
 		File createDir = new File(request.getSession().getServletContext().getRealPath("/")  + "resources/img/mushrooms");
 		if (!createDir.exists()) {
 			createDir.mkdir();	
 		}
+		*/
 		Set<PhotoURL> photoURLs = new HashSet<>();
-		for (File f : listOfFiles) {
+		Map<Integer,String> thumbs = (Map<Integer,String>)session.getAttribute("thumbs");
+		for (Entry<Integer,String> t : thumbs) {
+			
+			PhotoURL purl = new PhotoURL();
+			purl.setFile(Base64.getDecoder().decode(t.getValue()));
+			if(mainPhoto == t.getKey()) {
+				purl.setMain(true);	
+			} else {
+				purl.setMain(false);	
+			}
+			purl.setPhotoURL(RandomStringUtils.randomAlphabetic(12) + ".jpg"); //whatever
+			photoURLs.add(purl);
+			/*
 			if (f.isFile()) {
 				File newFile;
 				do {
@@ -239,15 +253,16 @@ public class ApplicationController {
 				}
 				photoURLs.add(purl);
 				
-				try(InputStream is = new FileInputStream(f); OutputStream os = new FileOutputStream(new File(newFile.getPath()))){
-						
-					byte[] buf = new byte[1024];
-					int bytesRead;
-		            while ((bytesRead = is.read(buf)) > 0) {
-		                os.write(buf, 0, bytesRead);
-		            }
-				}
+				
+				try(InputStream is = new FileInputStream(f); OutputStream os = new FileOutputStream(new File(newFile.getPath()))){	
+						byte[] buf = new byte[1024];
+						int bytesRead;
+					while ((bytesRead = is.read(buf)) > 0) {
+						os.write(buf, 0, bytesRead);
+					}
+				}	
 			}
+			*/
 		}
 		mushroom.setPhotos(photoURLs);
 		mushroomService.updateMushroom(mushroom);
