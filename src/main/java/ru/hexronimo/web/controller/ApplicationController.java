@@ -410,7 +410,8 @@ public class ApplicationController {
 		ArrayList<Mushroom> mushrooms = (ArrayList<Mushroom>) mushroomService.listMushrooms();
 		Map<Mushroom,String> mushAndThumbs = new HashMap<>(); 
 		for(Mushroom m : mushrooms) {
-			String main = mushroomPartService.getMainPhoto(m.getId());
+			String main = Base64.getEncoder().encodeToString(mushroomPartService.getMainPhoto(m.getId()));
+			/*
 			File mainurl = new File(request.getSession().getServletContext().getRealPath("/") + "resources/img/mushrooms/" + main);
 			File mainthumburl = new File(request.getSession().getServletContext().getRealPath("/") + "resources/img/mushrooms/thumb_" + main);
 			if (!(mainthumburl.exists())) {
@@ -422,8 +423,10 @@ public class ApplicationController {
 				BufferedImage img = new BufferedImage(300, (int)(height*ratio), BufferedImage.TYPE_INT_RGB);
 				img.createGraphics().drawImage(bimg.getScaledInstance(300, (int)(height*ratio), Image.SCALE_SMOOTH),0,0,null);
 				ImageIO.write(img, "jpg", mainthumburl);
+				
 			}
-			mushAndThumbs.put(m, mainthumburl.getName());	
+			*/
+			mushAndThumbs.put(m, main);
 		}
 
 		model.addAttribute("mushrooms", mushAndThumbs);
