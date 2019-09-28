@@ -38,7 +38,7 @@ background-size: cover;
 
 <tr>
 <td>
-<div class="sqr-image" style="background:url('data:image/jpeg;base64,<c:out value="${mushroom.value}"/>')no-repeat top center;"></div>
+<div class="sqr-image" style="background:url('data:image/jpeg;base64,<c:out value="${mushroom.value}"/>')no-repeat top center; background-size: cover;"></div>
 </td>
 <td>
 <h5 class="font-weight-bold"><c:out value="${mushroom.key.name}" /></h5>
