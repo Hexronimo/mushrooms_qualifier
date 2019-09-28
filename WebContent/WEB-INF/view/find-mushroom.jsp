@@ -10,6 +10,7 @@
 <link rel="stylesheet" href='<c:url value="/css/fullpage.css" /> '>
 
 <script type="text/javascript" src="<c:url value="/webjars/jquery/3.4.1/jquery.min.js" /> "></script>
+	<script type="text/javascript" src="<c:url value="/js/vendors/scrolloverflow.js" />"></script>
 <script type="text/javascript" src="<c:url value="/js/fullpage.js" /> "></script>
 <script type="text/javascript" src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" /> "></script>
 
