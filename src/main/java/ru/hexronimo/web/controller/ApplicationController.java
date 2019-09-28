@@ -310,7 +310,7 @@ public class ApplicationController {
 			}
 			*/
 		}
-		request.getSession().setAttribute("thumbs", thumbs);		
+		request.getSession().setAttribute("thumbs", photos);		
 	}
 	
 	@RequestMapping(value = "/createMPart", method = {RequestMethod.GET,RequestMethod.POST})
