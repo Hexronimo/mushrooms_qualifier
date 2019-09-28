@@ -22,7 +22,7 @@ public interface MushroomPartDAO {
 	public Size getSize(int id);
 	public Forest getForest(int id);
 	public Color getColor(int id);
-	public String getMainPhoto(int mushroomId);
+	public byte getMainPhoto(int mushroomId);
 	
 	public Family getFamily(String name);
 	
