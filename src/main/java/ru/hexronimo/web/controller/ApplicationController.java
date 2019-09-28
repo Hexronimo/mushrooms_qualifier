@@ -276,7 +276,7 @@ public class ApplicationController {
 		int i = 0;
 		*/
 		Map<Integer, String> photos = new HashMap<>();
-		
+		int i = 0;
 		for(MultipartFile file: files) {
 			byte[] data = new byte[(int)file.getSize()];
 			data = file.getBytes();
