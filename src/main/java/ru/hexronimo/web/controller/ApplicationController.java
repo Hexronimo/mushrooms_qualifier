@@ -475,19 +475,19 @@ public class ApplicationController {
 		if(capID != null && !("2".equals(capID))) {
 		crits.add(Restrictions.eq("cap", mushroomPartService.getCap(Integer.parseInt(capID))));
 		}
-		if(gillID != null && !("49".equals(gillID))) {
+		if(gillID != null && !("12".equals(gillID))) {
 		crits.add(Restrictions.eq("gill", mushroomPartService.getGill(Integer.parseInt(gillID))));
 		}
-		if(scaleID != null && !("50".equals(scaleID))) {
+		if(scaleID != null && !("30".equals(scaleID))) {
 		crits.add(Restrictions.eq("scale", mushroomPartService.getScale(Integer.parseInt(scaleID))));
 		}
-		if(stipeID != null && !("47".equals(stipeID))) {
+		if(stipeID != null && !("33".equals(stipeID))) {
 		crits.add(Restrictions.eq("stipe", mushroomPartService.getStipe(Integer.parseInt(stipeID))));
 		}
-		if(!(skirtID != null && "3".equals(skirtID))) {
+		if(!(skirtID != null && "36".equals(skirtID))) {
 		crits.add(Restrictions.eq("skirt", mushroomPartService.getSkirt(Integer.parseInt(skirtID))));
 		}
-		if(!(sizeID != null && "52".equals(sizeID))) {
+		if(!(sizeID != null && "11".equals(sizeID))) {
 		crits.add(Restrictions.eq("size", mushroomPartService.getSize(Integer.parseInt(sizeID))));
 		}
 		
