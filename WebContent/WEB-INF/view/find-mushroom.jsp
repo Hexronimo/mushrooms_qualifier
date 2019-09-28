@@ -247,7 +247,7 @@ border-radius: 32px;
 <div class="col-lg-3 text-center col-md-4 col-xs-2">
 
 <button type="button" class="imgAsRadio" data-toggle="modal" data-target="#modal" onclick="toModalFunction('${mushroom.key.id}')"></button>
-<div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:out value="${mushroom.value}"/>')no-repeat top center;"></div>
+<div class="sqr-image img-fluid  m-auto mb-1" style="background:url('data:image/jpeg;base64,<c:out value="${mushroom.value}"/>')no-repeat top center;"></div>
 <small class="font-weight-bold text-uppercase"><c:out value="${mushroom.key.name}" /></small>
 </div>
 </c:forEach>
