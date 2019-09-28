@@ -555,9 +555,9 @@ public class ApplicationController {
 		ArrayList<String> urls = new ArrayList<>();
 		for(PhotoURL u: photos) {
 			if(!u.isMain()) {
-			urls.add(u.getPhotoURL());
+			urls.add(Base64.getEncoder().encodeToString(u.getfile()));
 			} else {
-				request.getSession().setAttribute("mainPhoto", u.getPhotoURL());
+				request.getSession().setAttribute("mainPhoto", Base64.getEncoder().encodeToString(u.getFile()));
 			}
 		}
 		request.getSession().setAttribute("mushroom", mushroom);
