@@ -183,8 +183,8 @@ height:32px;
 		<div class="row">
 			<c:forEach items="${thumbs}" var="t">
 				<div class="col-lg-3 col-md-4 col-6 position-relative">
-				<input type="radio" class="imgAsRadio" id="mainPhoto" name="mainPhoto" value='<c:out value="${t}" />' required>
-				<img class="img-fluid" src="<c:url value="/img/tmp/thumbs/" /><c:out value="${t}" />" >
+				<input type="radio" class="imgAsRadio" id="mainPhoto" name="mainPhoto" value='<c:out value="${t.key}" />' required>
+				<img class="img-fluid" src='data:image/jpeg;base64,<c:out value="${t.value}" />' >
 				</div>
 			</c:forEach>
 			</div>
