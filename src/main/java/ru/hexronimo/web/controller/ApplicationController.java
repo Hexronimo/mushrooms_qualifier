@@ -266,9 +266,10 @@ public class ApplicationController {
 		}
 		mushroom.setPhotos(photoURLs);
 		mushroomService.updateMushroom(mushroom);
+		/*
 		FileUtils.cleanDirectory(dir);
 		dir.delete();
-		
+		*/
 		return  new RedirectView("listMushrooms");
 		
 	}
