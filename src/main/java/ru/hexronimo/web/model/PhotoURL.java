@@ -22,6 +22,8 @@ public class PhotoURL {
 	private Mushroom mushroom;
 	@Column(name = "photo_url")
 	private String photoURL;
+	@Column(name = "file")
+	private byte[] file;
 	@Column(name = "main")
 	private boolean isMain;
 	public Mushroom getMushroom() {
@@ -47,6 +49,12 @@ public class PhotoURL {
 	}
 	public void setPhotoURL(String photoURL) {
 		this.photoURL = photoURL;
+	}
+	public byte[] getFile() {
+		return file;
+	}
+	public void setFile(byte[] file) {
+		this.file = file;
 	}
 	
 }
