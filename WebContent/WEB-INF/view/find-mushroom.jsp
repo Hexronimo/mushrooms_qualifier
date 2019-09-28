@@ -81,7 +81,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="capID" name="capID" value='<c:out value="${cap.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${cap.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${cap.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${cap.name}" /></small></p>
 		</div>
@@ -119,7 +119,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="gillID" name="gillID" value='<c:out value="${gill.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${gill.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${gill.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${gill.name}" /></small></p>
 		</div>
@@ -156,7 +156,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="scaleID" name="scaleID" value='<c:out value="${scale.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${scale.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${scale.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${scale.name}" /></small></p>
 		</div>
@@ -211,7 +211,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="skirtID" name="skirtID" value='<c:out value="${skirt.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${skirt.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${skirt.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${skirt.name}" /></small></p>
 		</div>
@@ -228,7 +228,7 @@ border-radius: 32px;
 		<div class="col-lg-2 col-md-4 col-6">
 			<div class="w-100 position-relative">
 			<input type="radio" class="imgAsRadio" id="sizeID" name="sizeID" value='<c:out value="${size.id}" />' required>
-			<img class="img-fluid icon mb-1" src="<c:url value="/img/icons/" /><c:out value="${size.icon}" />">
+			<img class="img-fluid icon mb-1" src="data:image/svg+xml;base64,${size.fileAsString}">
 			</div>
 			<p class="text-center text-uppercase" style="line-height:1;"><small class="font-weight-bold"><c:out value="${size.name}" /></small></p>
 		</div>
@@ -247,7 +247,7 @@ border-radius: 32px;
 <div class="col-lg-3 text-center col-md-4 col-xs-2">
 
 <button type="button" class="imgAsRadio" data-toggle="modal" data-target="#modal" onclick="toModalFunction('${mushroom.key.id}')"></button>
-<div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:url value="/img/mushrooms/" /><c:out value="${mushroom.value}"/>')no-repeat top center;"></div>
+<div class="sqr-image img-fluid  m-auto mb-1" style="background:url('<c:out value="${mushroom.value}"/>')no-repeat top center;"></div>
 <small class="font-weight-bold text-uppercase"><c:out value="${mushroom.key.name}" /></small>
 </div>
 </c:forEach>
