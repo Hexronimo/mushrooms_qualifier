@@ -225,7 +225,7 @@ public class ApplicationController {
 		*/
 		Set<PhotoURL> photoURLs = new HashSet<>();
 		Map<Integer,String> thumbs = (Map<Integer,String>)request.getSession().getAttribute("thumbs");
-		for (Map.Entry<Integer,String> t : thumbs) {
+		for (Map.Entry<Integer,String> t : thumbs.entrySet()) {
 			
 			PhotoURL purl = new PhotoURL();
 			purl.setFile(Base64.getDecoder().decode(t.getValue()));
