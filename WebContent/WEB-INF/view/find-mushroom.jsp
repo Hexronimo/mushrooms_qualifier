@@ -63,7 +63,7 @@ border-radius: 32px;
 <body style="background-color: #f5f3f1;">
 <div id="fullpage">
 <form method="post" action="finding" id="finding">
-<div class="section pb-5 section-1">
+<div class="section pb-5 pt-5 section-1">
 <div class="container-fluid p-0 bg-danger mb-5 text-white fixed-top">
 <div class="container pt-4 pb-4">
 <a href="./" class="text-white h5 d-inline-block mr-4 mt-1 mb-1 font-weight-bold">На главную</a>
