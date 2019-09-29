@@ -500,6 +500,8 @@ public class ApplicationController {
 		if(capColorsID != null && capColorsID.length != 0) {
 			ArrayList<String> lc1 = new ArrayList<>(Arrays.asList(capColorsID));				
 			lc1.forEach(e -> cr1.add(Restrictions.eq("colorCap1", mushroomPartService.getColor(Integer.parseInt(e)))));
+			lc1.forEach(e -> cr1.add(Restrictions.eq("colorCap2", mushroomPartService.getColor(Integer.parseInt(e)))));
+			
 			lc1.forEach(e -> cr2.add(Restrictions.eq("colorCap2", mushroomPartService.getColor(Integer.parseInt(e)))));		
 			cr2.add(Restrictions.isNull("colorCap2"));
 		}
