@@ -63,14 +63,14 @@ border-radius: 32px;
 <body style="background-color: #f5f3f1;">
 <div id="fullpage">
 <form method="post" action="finding" id="finding">
-<div class="section pb-5 pt-5 section-1">
+<div class="section pt-5 section-1">
 <div class="container-fluid p-0 bg-danger mb-5 text-white fixed-top">
 <div class="container pt-4 pb-4">
 <a href="./" class="text-white h5 d-inline-block mr-4 mt-1 mb-1 font-weight-bold">На главную</a>
 </div>
 </div>
 
-<div class="container mt-5 pt-5 mb-5">
+<div class="container mt-5 pt-5 pb-5">
 <h1 style="font-family: 'Pacifico', cursive;" class="pb-3">Определитель грибов</h1>
 <div class="container-fluid p-0 text-justify">
 В этом разделе вы сможете найти грибы наиболее подходящие под те признаки, что вы запомнили. Отметьте характеристики, в которых вы наиболее уверены, для остальных выберите "Не учитывать в поиске".
