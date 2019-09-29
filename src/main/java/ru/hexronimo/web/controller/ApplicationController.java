@@ -525,6 +525,8 @@ public class ApplicationController {
 		for(Mushroom m : mushrooms) {
 			
 			String main = Base64.getEncoder().encodeToString(mushroomPartService.getMainPhoto(m.getId()));
+			System.out.println("oooooooooooooooooooooooooooooooooooo");
+			System.out.println("oooooooooooooooooooooooooooooooooooo");
 			
 			/*
 			File mainurl = new File(request.getSession().getServletContext().getRealPath("/") + "resources/img/mushrooms/" + main);
