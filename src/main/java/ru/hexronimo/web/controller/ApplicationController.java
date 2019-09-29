@@ -487,10 +487,10 @@ public class ApplicationController {
 		if(stipeID != null && !("33".equals(stipeID))) {
 		crits.add(Restrictions.eq("stipe", mushroomPartService.getStipe(Integer.parseInt(stipeID))));
 		}
-		if(!(skirtID != null && "36".equals(skirtID))) {
+		if(skirtID != null && !("36".equals(skirtID))) {
 		crits.add(Restrictions.eq("skirt", mushroomPartService.getSkirt(Integer.parseInt(skirtID))));
 		}
-		if(!(sizeID != null && "11".equals(sizeID))) {
+		if(sizeID != null && !("11".equals(sizeID))) {
 		crits.add(Restrictions.eq("size", mushroomPartService.getSize(Integer.parseInt(sizeID))));
 		}
 		
