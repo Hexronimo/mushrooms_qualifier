@@ -60,6 +60,11 @@ public class MushroomDAOImpl implements MushroomDAO {
 		
 		ArrayList<Mushroom> m = new ArrayList<>();	
 		m = (ArrayList<Mushroom>) criteria.list();
+		
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		System.out.println(m.size());
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		
 		Criteria criteria1 = sessionFactory.getCurrentSession().createCriteria(Mushroom.class);
 		for(Criterion c : crit) {
 			criteria1.add(c);
@@ -73,7 +78,9 @@ public class MushroomDAOImpl implements MushroomDAO {
 		ArrayList<Mushroom> n = new ArrayList<>();
 		n = (ArrayList<Mushroom>) criteria1.list();
 		n.addAll(m);
-		
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		System.out.println(n.size());
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
 		return n;
 		
 		
