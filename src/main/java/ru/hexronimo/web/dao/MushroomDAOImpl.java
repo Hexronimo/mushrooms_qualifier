@@ -60,18 +60,11 @@ public class MushroomDAOImpl implements MushroomDAO {
 		criteria.add(d3);
 		criteria.setResultTransformer(DistinctRootEntityResultTransformer.INSTANCE);
 
-		System.out.println("!!!!!!!!!Start query!!!!!!!!!!!!!!!!");
 		ArrayList<Mushroom> m = new ArrayList<>();	
 		m = (ArrayList<Mushroom>) criteria.list();
 		
-		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-		for(Mushroom kj : m){
-		System.out.println(kj.getName());	
-		}
-		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-		
 		Criteria criteria1 = sessionFactory.getCurrentSession().createCriteria(Mushroom.class);
-		criteria1.setResultTransformer(DistinctRootEntityResultTransformer.INSTANCE);
+		
 		for(Criterion c : crit) {
 			criteria1.add(c);
 		}
@@ -82,8 +75,16 @@ public class MushroomDAOImpl implements MushroomDAO {
 		criteria1.add(d5);
 		criteria1.add(d3);
 		
+		criteria1.setResultTransformer(DistinctRootEntityResultTransformer.INSTANCE);
 		ArrayList<Mushroom> n = new ArrayList<>();
 		n = (ArrayList<Mushroom>) criteria1.list();
+		
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		for(Mushroom kj : n){
+		System.out.println(kj.getName());	
+		}
+		System.out.println("ooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+		
 		n.addAll(m);
 		return n;
 		
