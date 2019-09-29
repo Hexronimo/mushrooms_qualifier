@@ -517,6 +517,7 @@ public class ApplicationController {
 		if(stipeColorsID != null && stipeColorsID.length != 0) {
 			ArrayList<String> ls1 = new ArrayList<>(Arrays.asList(stipeColorsID));		
 			ls1.forEach(e -> cs1.add(Restrictions.eq("colorStipe1", mushroomPartService.getColor(Integer.parseInt(e)))));
+			ls1.forEach(e -> cs1.add(Restrictions.eq("colorStipe2", mushroomPartService.getColor(Integer.parseInt(e)))));
 			ls1.forEach(e -> cs2.add(Restrictions.eq("colorStipe2", mushroomPartService.getColor(Integer.parseInt(e)))));	
 			cs2.add(Restrictions.isNull("colorStipe1"));
 		}
