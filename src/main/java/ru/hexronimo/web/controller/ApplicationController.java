@@ -265,6 +265,7 @@ public class ApplicationController {
 			}
 			*/
 		}
+		request.getSession().removeAttribute("thumbs");
 		mushroom.setPhotos(photoURLs);
 		mushroomService.updateMushroom(mushroom);
 		/*
