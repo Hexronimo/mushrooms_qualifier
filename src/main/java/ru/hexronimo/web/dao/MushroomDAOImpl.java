@@ -52,12 +52,12 @@ public class MushroomDAOImpl implements MushroomDAO {
 		for(Criterion c : crit) {
 			criteria.add(c);
 		}
-		
+		/*
 		criteria.add(d4);
 		criteria.add(d1); 
 		criteria.add(d3);
 
-		
+		*/
 		ArrayList<Mushroom> m = new ArrayList<>();	
 		m = (ArrayList<Mushroom>) criteria.list();
 		
@@ -69,12 +69,13 @@ public class MushroomDAOImpl implements MushroomDAO {
 		for(Criterion c : crit) {
 			criteria1.add(c);
 		}
-		
+		/*
 		criteria1.add(d4);
 		criteria1.add(d1); 
 		criteria1.add(d2);
 		criteria1.add(d5);
 		criteria1.add(d3);
+		*/
 		ArrayList<Mushroom> n = new ArrayList<>();
 		n = (ArrayList<Mushroom>) criteria1.list();
 		n.addAll(m);
