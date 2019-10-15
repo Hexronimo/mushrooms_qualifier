@@ -1,7 +1,7 @@
 # Mushroom qualifier
 Web application for qualifying mushrooms by their look made with Spring MVC, Hibernate and Postgres SQL
 
-## DEMO: https://mushrooms-qualifier.herokuapp.com/findMushroom
+## DEMO: https://mushrooms-qualifier.herokuapp.com/
 
 ## About project
 This is a training project which used to be basic CRUD but turned out to be a messy piece of shit-code, even messier after all fixes made to deploy it on Heroku.
